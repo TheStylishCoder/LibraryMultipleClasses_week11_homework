@@ -7,24 +7,45 @@ public class LibraryTest {
 
     private Library library;
     private Book book;
+    private Book book2;
+    private Book book3;
+    private Book book4;
+    private Book book5;
+    private Book book6;
 
     @Before
     public void before(){
-        library = new Library(6);
-        book = new Book("Strangers on a Train", "Patricia Highsmith", "crime");
+        library = new Library(5);
+        book = new Book("Jane Eyre", "Charlotte Bronte", "romance");
+        book2 = new Book("The Black Dahlia", "James Ellroy", "crime");
+        book3 = new Book("Northern Lights", "Philip Pullman", "young fiction");
+        book4 = new Book("Becoming", "Michelle Obama", "non-fiction");
+        book5 = new Book("Pride and Prejudice", "Jane Austen", "romance");
+        book6 = new Book("Strangers on a Train", "Patricia Highsmith", "crime");
+        library.addBook(book);
+        library.addBook(book2);
+        library.addBook(book3);
+        library.addBook(book4);
+
 
     }
 
     @Test
     public void canCountBooksInStock(){
-        assertEquals(0, library.stockCount());
+        assertEquals(4, library.stockCount());
     }
 
     @Test
     public void canAddBookToStock(){
-        library.addBook(book);
-        assertEquals(1, library.stockCount());
+        library.addBook(book5);
+        assertEquals(5, library.stockCount());
     }
 
+    @Test
+    public void cannotAddBookToStock(){
+        library.addBook(book5);
+        library.addBook(book6);
+        assertEquals(5, library.stockCount());
+    }
 
 }
