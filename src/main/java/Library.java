@@ -25,4 +25,14 @@ public class Library {
     public Book removeBook(){
         return this.bookCollection.remove(0);
     }
+
+    public ArrayList<String> getGenres(){
+        ArrayList<String> genres = new ArrayList<String>();
+        for(Book book : bookCollection){
+            String genre = book.getGenre();
+            genres.add(genre);
+        }
+        return genres;
+
+    }
 }

@@ -54,4 +54,11 @@ public class LibraryTest {
         assertEquals(3, library.stockCount());
     }
 
+    @Test
+    public void canGetGenreOfOneBook(){
+        assertEquals("romance", book.getGenre());
+    }
+
+   
+
 }
