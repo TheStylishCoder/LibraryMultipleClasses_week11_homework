@@ -8,5 +8,7 @@ public class Borrower {
         this.booksOnLoan = new ArrayList<Book>();
     }
 
-
+    public int booksOnLoanCount(){
+        return this.booksOnLoan.size();
+    }
 }
