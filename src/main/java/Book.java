@@ -10,5 +10,7 @@ public class Book {
         this.genre = genre;
     }
 
-
+    public String getGenre() {
+        return genre;
+    }
 }
