@@ -24,5 +24,9 @@ public class BorrowerTest {
         assertEquals(0, borrower.booksOnLoanCount());
     }
 
-
+    @Test
+    public void canAddBookToLoanList(){
+        borrower.addBook(book);
+        assertEquals(1,borrower.booksOnLoanCount() );
+    }
 }
