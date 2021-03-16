@@ -17,6 +17,7 @@ public class BorrowerTest {
         borrower = new Borrower();
         book = new Book("The Jungle Book", "Rudyard Kipling", "fiction");
         library = new Library(20);
+        library.addBook(book);
     }
 
     @Test
@@ -28,5 +29,11 @@ public class BorrowerTest {
     public void canAddBookToLoanList(){
         borrower.addBook(book);
         assertEquals(1,borrower.booksOnLoanCount() );
+    }
+
+    @Test
+    public void canBorrowABookFromLibrary(){
+        borrower.borrowBookFromLibrary(library);
+        assertEquals(1, borrower.booksOnLoanCount());
     }
 }

@@ -15,4 +15,9 @@ public class Borrower {
     public void addBook(Book book){
         this.booksOnLoan.add(book);
     }
+
+    public void borrowBookFromLibrary(Library library){
+        Book book = library.removeBook();
+        booksOnLoan.add(book);
+    }
 }
